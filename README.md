@@ -1,25 +1,27 @@
 <div align="center">
 
-  <!-- 3D ANIMATED HERO BANNER -->
-  <img src="./banner.svg" width="100%" alt="A Gourav 3D Banner" />
+  <!-- 3D ANIMATED HERO BANNER LINKED TO VERCEL -->
+  <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app" target="_blank">
+    <img src="./banner.svg" width="100%" alt="A Gourav 3D Portfolio Banner" />
+  </a>
 
   <br /><br />
 
-  <!-- BADGES ROW -->
-  <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app">
-    <img src="https://img.shields.io/badge/LIVE_DEMO-00F0FF?style=for-the-badge&logo=vercel&logoColor=000" alt="Live Demo" />
+  <!-- BADGES ROW WITH PROMINENT VERCEL DEPLOYMENT BADGES -->
+  <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/LIVE_PORTFOLIO-00F0FF?style=for-the-badge&logo=vercel&logoColor=000" alt="Live Portfolio Vercel" />
   </a>
-  <a href="https://react.dev">
+  <a href="https://vercel.com/gourav16/portfolio" target="_blank">
+    <img src="https://img.shields.io/badge/VERCEL_PROJECT-000000?style=for-the-badge&logo=vercel&logoColor=fff" alt="Vercel Dashboard" />
+  </a>
+  <a href="https://react.dev" target="_blank">
     <img src="https://img.shields.io/badge/REACT_19-61DAFB?style=for-the-badge&logo=react&logoColor=000" alt="React 19" />
   </a>
-  <a href="https://threejs.org">
+  <a href="https://threejs.org" target="_blank">
     <img src="https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=three.js&logoColor=fff" alt="Three.js" />
   </a>
-  <a href="https://vitejs.dev">
+  <a href="https://vitejs.dev" target="_blank">
     <img src="https://img.shields.io/badge/VITE_8-646CFF?style=for-the-badge&logo=vite&logoColor=fff" alt="Vite 8" />
-  </a>
-  <a href="https://pytorch.org">
-    <img src="https://img.shields.io/badge/PYTORCH-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=fff" alt="PyTorch" />
   </a>
 
 </div>
@@ -78,8 +80,12 @@ npm run build
 
 <div align="center">
 
-> **"Stay GOATED 🐐"** — *A Gourav*
+  <!-- ANIMATED 3D FOOTER BANNER LINKED TO VERCEL -->
+  <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app" target="_blank">
+    <img src="./footer_banner.svg" width="100%" alt="A Gourav 3D Footer Quote Banner" />
+  </a>
 
-<p>Built with 💙 by <b>A Gourav</b> • Deployed on <b>Vercel</b></p>
+  <br /><br />
+  <p>Built with 💙 by <b>A Gourav</b> • Deployed Live on <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app" target="_blank"><b>Vercel</b></a></p>
 
 </div>
