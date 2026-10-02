@@ -1,151 +1,123 @@
 <svg width="950" height="280" viewBox="0 0 950 280" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- LUXURY GRADIENTS -->
+    <!-- BACKGROUND GRADIENT -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030712" />
-      <stop offset="40%" stop-color="#0b1329" />
-      <stop offset="80%" stop-color="#120c24" />
-      <stop offset="100%" stop-color="#030712" />
+      <stop offset="0%" stop-color="#050C1E" />
+      <stop offset="50%" stop-color="#0A1836" />
+      <stop offset="100%" stop-color="#030814" />
     </linearGradient>
 
-    <radialGradient id="aurora-glow1" cx="20%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0" />
-    </radialGradient>
-
-    <radialGradient id="aurora-glow2" cx="80%" cy="70%" r="60%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
-    </radialGradient>
-
+    <!-- ULTRA BRIGHT TEXT GRADIENT -->
     <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="25%" stop-color="#38BDF8" />
-      <stop offset="50%" stop-color="#A855F7" />
-      <stop offset="75%" stop-color="#EC4899" />
-      <stop offset="100%" stop-color="#38BDF8" />
+      <stop offset="30%" stop-color="#00F0FF" />
+      <stop offset="70%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#FFFFFF" />
     </linearGradient>
 
-    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- BORDER GRADIENT -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="50%" stop-color="#A855F7" />
-      <stop offset="100%" stop-color="#EC4899" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#00F0FF" />
     </linearGradient>
 
-    <!-- NEON GLOW FILTERS -->
-    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="blur1" />
-      <feGaussianBlur stdDeviation="18" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur2" />
-        <feMergeNode in="blur1" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- HIGH CONTRAST DROP SHADOW -->
+    <filter id="text-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00F0FF" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#0077FF" flood-opacity="0.6"/>
     </filter>
   </defs>
 
   <style>
-    @keyframes pulseTitle {
-      0% { filter: drop-shadow(0 0 12px #00F0FF) drop-shadow(0 0 30px #A855F7); }
-      50% { filter: drop-shadow(0 0 28px #00F0FF) drop-shadow(0 0 55px #EC4899); }
-      100% { filter: drop-shadow(0 0 12px #00F0FF) drop-shadow(0 0 30px #A855F7); }
+    @keyframes titlePulse {
+      0% { filter: drop-shadow(0 0 8px #00F0FF) drop-shadow(0 0 20px #0055FF); transform: translateY(0px); }
+      50% { filter: drop-shadow(0 0 20px #00F0FF) drop-shadow(0 0 35px #00E5FF); transform: translateY(-4px); }
+      100% { filter: drop-shadow(0 0 8px #00F0FF) drop-shadow(0 0 20px #0055FF); transform: translateY(0px); }
     }
-    @keyframes floatText {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
-      100% { transform: translateY(0px); }
+    @keyframes rotateCube {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-    @keyframes rotate3D {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.08); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-    @keyframes sweepLine {
+    @keyframes scanSweep {
       0% { transform: translateY(-280px); opacity: 0; }
-      50% { opacity: 0.35; }
+      50% { opacity: 0.5; }
       100% { transform: translateY(280px); opacity: 0; }
     }
 
-    .main-bg {
+    .main-card {
       fill: url(#bg-grad);
       stroke: url(#border-grad);
-      stroke-width: 2px;
-      rx: 20px;
+      stroke-width: 2.5px;
+      rx: 18px;
     }
-    .title-text {
-      font-family: 'Space Grotesk', 'Orbitron', 'Inter', -apple-system, sans-serif;
-      font-size: 64px;
+    .title-name {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 68px;
       font-weight: 900;
       fill: url(#title-grad);
       letter-spacing: 8px;
       text-anchor: middle;
-      animation: floatText 4s ease-in-out infinite, pulseTitle 3s ease-in-out infinite;
+      animation: titlePulse 3.5s ease-in-out infinite;
     }
-    .sub-text {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 20px;
+    .sub-title {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+      font-size: 22px;
       font-weight: 800;
-      fill: #00F0FF;
-      letter-spacing: 12px;
+      fill: #FFD700;
+      letter-spacing: 14px;
       text-anchor: middle;
-      opacity: 0.95;
+      filter: drop-shadow(0 0 8px #FFD700);
     }
-    .vector-3d {
+    .vector-cube {
       transform-origin: 820px 140px;
-      animation: rotate3D 14s linear infinite;
+      animation: rotateCube 14s linear infinite;
     }
-    .scan-line {
-      animation: sweepLine 5s linear infinite;
+    .scan-beam {
+      animation: scanSweep 4.5s linear infinite;
     }
   </style>
 
-  <!-- BACKGROUND RECT WITH GRADIENT BORDER -->
-  <rect width="950" height="280" class="main-bg" />
+  <!-- CARD BACKGROUND -->
+  <rect width="950" height="280" class="main-card" />
 
-  <!-- AURORA MESH OVERLAYS -->
-  <rect width="950" height="280" fill="url(#aurora-glow1)" rx="20" />
-  <rect width="950" height="280" fill="url(#aurora-glow2)" rx="20" />
-
-  <!-- CYBER GRID PATTERN -->
-  <g opacity="0.12" stroke="#00F0FF" stroke-width="0.75">
-    <line x1="0" y1="50" x2="950" y2="50" />
-    <line x1="0" y1="100" x2="950" y2="100" />
-    <line x1="0" y1="150" x2="950" y2="150" />
-    <line x1="0" y1="200" x2="950" y2="200" />
-    <line x1="0" y1="250" x2="950" y2="250" />
-    <line x1="150" y1="0" x2="150" y2="280" />
-    <line x1="300" y1="0" x2="300" y2="280" />
-    <line x1="450" y1="0" x2="450" y2="280" />
+  <!-- GRID PATTERN -->
+  <g opacity="0.12" stroke="#00F0FF" stroke-width="1">
+    <line x1="0" y1="70" x2="950" y2="70" />
+    <line x1="0" y1="140" x2="950" y2="140" />
+    <line x1="0" y1="210" x2="950" y2="210" />
+    <line x1="200" y1="0" x2="200" y2="280" />
+    <line x1="400" y1="0" x2="400" y2="280" />
     <line x1="600" y1="0" x2="600" y2="280" />
-    <line x1="750" y1="0" x2="750" y2="280" />
+    <line x1="800" y1="0" x2="800" y2="280" />
   </g>
 
-  <!-- SCANLINE -->
-  <rect x="0" y="0" width="950" height="4" fill="#00F0FF" class="scan-line" opacity="0.5" filter="url(#neon-glow)" />
+  <!-- SCANLINE BEAM -->
+  <rect x="0" y="0" width="950" height="4" fill="#00F0FF" class="scan-beam" filter="url(#text-glow)" />
 
-  <!-- RETICLE CORNERS -->
-  <g stroke="#00F0FF" stroke-width="2.5" opacity="0.85">
-    <path d="M 35 35 L 35 75 M 35 35 L 75 35" />
-    <path d="M 915 35 L 915 75 M 915 35 L 875 35" />
-    <path d="M 35 245 L 35 205 M 35 245 L 75 245" />
-    <path d="M 915 245 L 915 205 M 915 245 L 875 245" />
+  <!-- RETICLES -->
+  <g stroke="#00F0FF" stroke-width="3" opacity="0.9">
+    <path d="M 30 30 L 30 70 M 30 30 L 70 30" />
+    <path d="M 920 30 L 920 70 M 920 30 L 880 30" />
+    <path d="M 30 250 L 30 210 M 30 250 L 70 250" />
+    <path d="M 920 250 L 920 210 M 920 250 L 880 250" />
   </g>
 
-  <!-- 3D ROTATING VECTOR ICON -->
-  <g class="vector-3d">
-    <!-- OUTER HEXAGON -->
-    <polygon points="820,85 860,110 860,160 820,185 780,160 780,110" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.9" />
-    <!-- INNER CUBE FACES -->
-    <polygon points="820,85 860,110 820,135 780,110" fill="#00F0FF" fill-opacity="0.1" stroke="#A855F7" stroke-width="1.5" />
-    <polygon points="780,110 820,135 820,185 780,160" fill="#A855F7" fill-opacity="0.15" stroke="#00F0FF" stroke-width="1.5" />
-    <polygon points="820,135 860,110 860,160 820,185" fill="#EC4899" fill-opacity="0.15" stroke="#EC4899" stroke-width="1.5" />
-    <!-- GLOWING NODE -->
-    <circle cx="820" cy="135" r="5" fill="#00F0FF" filter="url(#neon-glow)" />
+  <!-- 3D ROTATING VECTOR CUBE ON RIGHT -->
+  <g class="vector-cube">
+    <polygon points="820,80 860,105 860,155 820,180 780,155 780,105" fill="#00F0FF" fill-opacity="0.08" stroke="#00F0FF" stroke-width="2" />
+    <polygon points="820,80 860,105 820,130 780,105" fill="#00F0FF" fill-opacity="0.15" stroke="#3B82F6" stroke-width="1.5" />
+    <polygon points="780,105 820,130 820,180 780,155" fill="#3B82F6" fill-opacity="0.2" stroke="#00F0FF" stroke-width="1.5" />
+    <polygon points="820,130 860,105 860,155 820,180" fill="#00E5FF" fill-opacity="0.2" stroke="#FFD700" stroke-width="1.5" />
+    <circle cx="820" cy="130" r="6" fill="#FFD700" filter="url(#text-glow)" />
   </g>
 
-  <!-- CENTER TITLE & SUBTITLE -->
-  <g transform="translate(450, 135)">
-    <text x="0" y="0" class="title-text">A GOURAV</text>
-    <text x="0" y="50" class="sub-text">✦ PORTFOLIO ✦</text>
+  <!-- TEXT BACKPLATE FOR 100% CONTRAST & LEGIBILITY -->
+  <rect x="180" y="55" width="540" height="170" rx="14" fill="#030814" fill-opacity="0.75" stroke="#00F0FF" stroke-width="1" />
+
+  <!-- HIGH-VISIBILITY TITLE & SUBTITLE -->
+  <g transform="translate(450, 132)">
+    <text x="0" y="0" class="title-name">A GOURAV</text>
+    <text x="0" y="52" class="sub-title">✦ PORTFOLIO ✦</text>
   </g>
 </svg>
