@@ -1,0 +1,142 @@
+<svg width="900" height="260" viewBox="0 0 900 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- GRADIENTS -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="50%" stop-color="#06152d" />
+      <stop offset="100%" stop-color="#02050e" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#00F0FF" />
+      <stop offset="70%" stop-color="#7000FF" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="1" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- GLOW FILTERS -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="heavy-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
+      <feGaussianBlur stdDeviation="24" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseGlow {
+      0% { filter: drop-shadow(0 0 10px #00F0FF) drop-shadow(0 0 25px #0077FF); opacity: 0.9; }
+      50% { filter: drop-shadow(0 0 25px #00F0FF) drop-shadow(0 0 50px #7000FF); opacity: 1; }
+      100% { filter: drop-shadow(0 0 10px #00F0FF) drop-shadow(0 0 25px #0077FF); opacity: 0.9; }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-260px); opacity: 0; }
+      50% { opacity: 0.4; }
+      100% { transform: translateY(260px); opacity: 0; }
+    }
+    @keyframes rotateCube {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+    @keyframes floatTitle {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .bg-rect {
+      fill: url(#bg-grad);
+      stroke: #00F0FF;
+      stroke-width: 1.5;
+      rx: 16px;
+    }
+    .main-title {
+      font-family: 'Space Grotesk', 'Orbitron', -apple-system, sans-serif;
+      font-size: 58px;
+      font-weight: 900;
+      fill: url(#text-grad);
+      letter-spacing: 6px;
+      text-anchor: middle;
+      animation: floatTitle 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+    }
+    .subtitle {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      fill: #00F0FF;
+      letter-spacing: 8px;
+      text-anchor: middle;
+      opacity: 0.9;
+    }
+    .cube-wire {
+      transform-origin: 780px 130px;
+      animation: rotateCube 12s linear infinite;
+    }
+    .scan-bar {
+      animation: scanline 4s linear infinite;
+    }
+  </style>
+
+  <!-- BACKGROUND CARD -->
+  <rect width="900" height="260" class="bg-rect" />
+
+  <!-- 3D GRID PATTERN -->
+  <g opacity="0.15" stroke="#00F0FF" stroke-width="0.5">
+    <line x1="0" y1="40" x2="900" y2="40" />
+    <line x1="0" y1="80" x2="900" y2="80" />
+    <line x1="0" y1="120" x2="900" y2="120" />
+    <line x1="0" y1="160" x2="900" y2="160" />
+    <line x1="0" y1="200" x2="900" y2="200" />
+    <line x1="100" y1="0" x2="100" y2="260" />
+    <line x1="200" y1="0" x2="200" y2="260" />
+    <line x1="300" y1="0" x2="300" y2="260" />
+    <line x1="400" y1="0" x2="400" y2="260" />
+    <line x1="500" y1="0" x2="500" y2="260" />
+    <line x1="600" y1="0" x2="600" y2="260" />
+    <line x1="700" y1="0" x2="700" y2="260" />
+    <line x1="800" y1="0" x2="800" y2="260" />
+  </g>
+
+  <!-- DYNAMIC SCANLINE ANIMATION -->
+  <rect x="0" y="0" width="900" height="4" fill="url(#cyan-glow)" class="scan-bar" />
+
+  <!-- 3D ROTATING VECTOR ICON ON RIGHT -->
+  <g class="cube-wire">
+    <polygon points="780,80 820,105 820,155 780,180 740,155 740,105" fill="none" stroke="#00F0FF" stroke-width="1.5" opacity="0.8" />
+    <polygon points="780,80 820,105 780,130 740,105" fill="none" stroke="#7000FF" stroke-width="1.5" opacity="0.8" />
+    <line x1="780" y1="130" x2="780" y2="180" stroke="#00F0FF" stroke-width="1.5" opacity="0.8" />
+    <line x1="820" y1="105" x2="780" y2="130" stroke="#00F0FF" stroke-width="1.5" opacity="0.8" />
+    <line x1="740" y1="105" x2="780" y2="130" stroke="#00F0FF" stroke-width="1.5" opacity="0.8" />
+    <circle cx="780" cy="130" r="4" fill="#00F0FF" filter="url(#neon-glow)" />
+  </g>
+
+  <!-- LEFT CYBER ACCENT RETICLE -->
+  <g stroke="#00F0FF" stroke-width="2" opacity="0.8">
+    <path d="M 40 40 L 40 70 M 40 40 L 70 40" />
+    <path d="M 40 220 L 40 190 M 40 220 L 70 220" />
+  </g>
+
+  <!-- MAIN ANIMATED 3D TITLE -->
+  <g transform="translate(430, 125)">
+    <text x="0" y="0" class="main-title">A GOURAV</text>
+    <text x="0" y="45" class="subtitle">⚡ PORTFOLIO &amp; EDGE AI RESEARCH ⚡</text>
+  </g>
+</svg>

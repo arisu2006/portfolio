@@ -1,12 +1,26 @@
-# A Gourav — 3D WebGL Portfolio & Research
-
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-00F0FF?style=for-the-badge&logo=vercel&logoColor=000)](https://portfolio-lime-six-9sktsk3gk.vercel.app)
-[![React 19](https://img.shields.io/badge/REACT_19-61DAFB?style=for-the-badge&logo=react&logoColor=000)](https://react.dev)
-[![Three.js](https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=three.js&logoColor=fff)](https://threejs.org)
-[![Vite 8](https://img.shields.io/badge/VITE_8-646CFF?style=for-the-badge&logo=vite&logoColor=fff)](https://vitejs.dev)
-[![PyTorch](https://img.shields.io/badge/PYTORCH-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=fff)](https://pytorch.org)
+  <!-- 3D ANIMATED HERO BANNER -->
+  <img src="./banner.svg" width="100%" alt="A Gourav 3D Banner" />
+
+  <br /><br />
+
+  <!-- BADGES ROW -->
+  <a href="https://portfolio-lime-six-9sktsk3gk.vercel.app">
+    <img src="https://img.shields.io/badge/LIVE_DEMO-00F0FF?style=for-the-badge&logo=vercel&logoColor=000" alt="Live Demo" />
+  </a>
+  <a href="https://react.dev">
+    <img src="https://img.shields.io/badge/REACT_19-61DAFB?style=for-the-badge&logo=react&logoColor=000" alt="React 19" />
+  </a>
+  <a href="https://threejs.org">
+    <img src="https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=three.js&logoColor=fff" alt="Three.js" />
+  </a>
+  <a href="https://vitejs.dev">
+    <img src="https://img.shields.io/badge/VITE_8-646CFF?style=for-the-badge&logo=vite&logoColor=fff" alt="Vite 8" />
+  </a>
+  <a href="https://pytorch.org">
+    <img src="https://img.shields.io/badge/PYTORCH-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=fff" alt="PyTorch" />
+  </a>
 
 </div>
 
